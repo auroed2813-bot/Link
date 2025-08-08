@@ -1,8 +1,205 @@
+/* Fuente y colores base */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #e0f2ff;
-  color: #222;
   margin: 0;
   padding: 0;
+  color: #222;
 }
-... (recortado por brevedad)
+
+/* Encabezado */
+header {
+  background-color: #0d2c54;
+  color: #ffe600;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #ffe600;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Contenido principal */
+main {
+  padding: 2rem 10%;
+  background: #fff;
+}
+
+/* Encabezados */
+h2 {
+  color: #004d00;
+  border-bottom: 2px solid #004d00;
+  padding-bottom: 0.3rem;
+}
+
+/* Imágenes generales */
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Tarjetas de contenido */
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #f0fff0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 1rem;
+  max-width: 300px;
+  text-align: center;
+}
+
+.card img {
+  margin-bottom: 0.5rem;
+}
+
+/* Galería de imágenes */
+.image-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-grid img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Contenedor de video */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Sección Lugares con imágenes alternadas */
+.lugar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.lugar img {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.lugar .izquierda {
+  order: 0;
+}
+
+.lugar .derecha {
+  order: 1;
+}
+
+.lugar div {
+  width: 55%;
+}
+
+/* Sección de enlaces */
+.enlaces ul {
+  list-style: none;
+  padding: 0;
+}
+
+.enlaces li {
+  margin: 10px 0;
+}
+
+.enlaces a {
+  color: #00ccff;
+  text-decoration: underline;
+  font-size: 1.1em;
+}
+
+/* Animaciones al hacer scroll */
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pie de página */
+footer {
+  background-color: #0d2c54;
+  color: #ffe600;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Música */
+audio {
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lugar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lugar img,
+  .lugar div {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: auto;
+  }
+}
